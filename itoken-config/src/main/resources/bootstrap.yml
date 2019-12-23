@@ -1,0 +1,29 @@
+#远程配置文件地址
+spring:
+  application:
+    name: itoken-config
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/lizizheng/itoken-config-yml
+          #此处配置多个路径，分别给不同的项目使用
+          search-paths:
+          - itoken-eureka
+          - itoken-admin
+          - itoken-zipkin
+          - itoken-zuul
+          username: 982297627@qq.com
+          password: Winordie186
+          refresh-rate: 60000
+server:
+  port: 9888
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:9822/eureka,http://peer2:9823/eureka
+      
+      
+  
